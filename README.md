@@ -27,30 +27,31 @@ git clone https://github.com/<your-username>/converthub.git
 cd converthub
 ```
 
-### 2. Install dependencies
+### 2. Create a virtual environment
 
 ```bash
-# Backend
-cd backend
-npm install
-
-# Frontend
-cd ../frontend
-npm install
+python -m venv env
+source env/bin/activate   # Mac/Linux
+env\Scripts\activate      # Windows
 ```
 
-### 3. Launch the project
+### 3. Install dependencies
 
 ```bash
-# Backend
-cd backend
-npm run dev
-
-# Frontend
-cd ../frontend
-npm run dev
+pip install -r requirements.txt
 ```
 
+### 4. Configure the database
+
+```bash
+python manage.py migrate
+```
+
+### 5. Start the development server
+
+```bash
+python manage.py runserver
+```
 ---
 
 ## 🤝 Contribute
