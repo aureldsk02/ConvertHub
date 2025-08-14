@@ -23,33 +23,60 @@ Our goal: to create **the world's largest conversion library**, powered by the c
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/converthub.git
+git clone https://github.com/aureldsk02/converthub.git
 cd converthub
 ```
 
-### 2. Install dependencies
+---
+
+### 2. Django backend
+
+#### a) Create a virtual environment
 
 ```bash
-# Backend
-cd backend
-npm install
+python -m venv env
+source env/bin/activate   # Mac/Linux
+env\Scripts\activate      # Windows
+```
 
-# Frontend
-cd ../frontend
+#### b) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### c) Configure the database
+
+```bash
+python manage.py migrate
+```
+
+#### d) Start the Django server
+
+```bash
+python manage.py runserver
+```
+
+> The backend runs by default on `http://127.0.0.1:8000/`
+
+---
+
+### 3. React frontend
+
+#### a) Install dependencies
+
+```bash
+cd frontend
 npm install
 ```
 
-### 3. Launch the project
+#### b) Launch the frontend
 
 ```bash
-# Backend
-cd backend
-npm run dev
-
-# Frontend
-cd ../frontend
-npm run dev
+npm start
 ```
+
+> The frontend runs by default on `http://localhost:3000/` and communicates with the backend via the Django API.
 
 ---
 
