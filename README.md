@@ -27,7 +27,11 @@ git clone https://github.com/<your-username>/converthub.git
 cd converthub
 ```
 
-### 2. Create a virtual environment
+---
+
+### 2. Django backend
+
+#### a) Create a virtual environment
 
 ```bash
 python -m venv env
@@ -35,23 +39,45 @@ source env/bin/activate   # Mac/Linux
 env\Scripts\activate      # Windows
 ```
 
-### 3. Install dependencies
+#### b) Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure the database
+#### c) Configure the database
 
 ```bash
 python manage.py migrate
 ```
 
-### 5. Start the development server
+#### d) Start the Django server
 
 ```bash
 python manage.py runserver
 ```
+
+> The backend runs by default on `http://127.0.0.1:8000/`
+
+---
+
+### 3. React frontend
+
+#### a) Install dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+#### b) Launch the frontend
+
+```bash
+npm start
+```
+
+> The frontend runs by default on `http://localhost:3000/` and communicates with the backend via the Django API.
+
 ---
 
 ## 🤝 Contribute
